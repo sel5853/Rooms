@@ -21,4 +21,8 @@ public class Room {
 		occupant = null;
 	}
 	
+	public void print()
+	{
+		System.out.println(xLoc + " " + yLoc);
+	}
 }

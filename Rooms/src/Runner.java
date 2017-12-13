@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class Runner {
 	
@@ -17,6 +18,39 @@ public class Runner {
 				building[x][y] = new Room(x,y);
 			}
 		}
+		
+		
+		//Method to pick a random event for the RandomEventRoom
+		private String RandomEvent()
+		{
+			double l = Math.random() * 10;
+			
+			if(l >= 0 && (l <=2))
+			{
+				System.out.println(" ");
+			}
+			
+			if(l >= 3 && (l <=4))
+			{
+				System.out.println(" ");
+			}
+			
+			if(l >= 5 && (l <=6))
+			{
+				System.out.println(" ");
+			}
+			
+			if(l >= 7 && (l <=8))
+			{
+				System.out.println(" ");
+			}
+			
+			if(l >= 9 && (l <=10))
+			{
+				System.out.println(" ");
+			}
+		}
+		 
 		
 		//Create a random winning room.
 		int x = (int)(Math.random()*building.length);
