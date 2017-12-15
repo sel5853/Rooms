@@ -23,6 +23,9 @@ public class Room {
 	
 	public void print()
 	{
-		System.out.println(xLoc + " " + yLoc);
+		System.out.println("[");
+		System.out.println("x");
+		System.out.println("]");
+
 	}
 }

@@ -3,10 +3,13 @@ public class Board {
 	
 	private Room[][] rooms;
 	
+	public Board(Room[][] rooms)
+	{
+		this.rooms = rooms;
+	}
+	
 	public void printBoard()
 	{
-		
-		this.rooms = rooms;
 		
 		for(Room[] x : rooms)
 		{
@@ -14,7 +17,17 @@ public class Board {
 			{
 				y.print();
 			}
-			System.out.println();
+			System.out.println();	
 		}
+	}
+	
+	public Room[][] getMap()
+	{
+		return rooms;
+	}
+	
+	public void setMap(Room[][] rooms)
+	{
+		this.rooms = rooms;
 	}
 }

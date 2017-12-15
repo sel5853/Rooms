@@ -8,9 +8,11 @@ public class RandomEventRoom extends Room
 	}
 	public void enterRoom(Person x)
 	{
-		System.out.println(" ");
+		System.out.println();
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
 	}
+	
+	
 }
