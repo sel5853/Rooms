@@ -51,11 +51,15 @@ public class Runner {
 		Scanner in = new Scanner(System.in);
 		while(gameOn)
 		{
-			System.out.println("Where would you like to move? (Choose N, S, E, W)");
+			System.out.println("Where would you like to move? (Choose N, S, E, W, M for map) ");
 			String move = in.nextLine();
 			if(validMove(move, player1, building))
 			{
 				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
+				
+			}
+			if()
+			{
 				
 			}
 			else {
@@ -65,15 +69,6 @@ public class Runner {
 			
 		}
 		in.close();
-	}
-	
-	public static String getMap(String input)
-	{
-		String output;
-		
-		
-		
-		return ;
 	}
 	
 	public static boolean validMove(String move, Person p, Room[][] map)

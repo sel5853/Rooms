@@ -30,4 +30,9 @@ public class Board {
 	{
 		this.rooms = rooms;
 	}
+	
+	public String toString()
+	{
+		return "[ ]";
+	}
 }
