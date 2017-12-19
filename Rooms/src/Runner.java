@@ -14,7 +14,7 @@ public class Runner {
 		{
 			for(Room y : x)
 			{
-				y.print();
+				System.out.println(rooms.toString());	
 			}
 			System.out.println();	
 		}
@@ -22,7 +22,7 @@ public class Runner {
 	
 	public static void main(String[] args)
 	{
-		Room[][] building = new Room[5][5];
+		Room[][] building = new Room[10][10];
 		
 		//Fill the building with normal rooms
 		for (int x = 0; x<building.length; x++)
@@ -56,12 +56,8 @@ public class Runner {
 			if(validMove(move, player1, building))
 			{
 				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
-				
 			}
-			if()
-			{
-				
-			}
+			
 			else {
 				System.out.println("Please choose a valid move.");
 			}

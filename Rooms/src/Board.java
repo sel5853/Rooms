@@ -8,6 +8,13 @@ public class Board {
 		this.rooms = rooms;
 	}
 	
+	public Board(int area)
+	{
+		int x = 8;
+		int y = 8;
+		this.rooms = new Room[y][x];
+	}
+	
 	public void printBoard()
 	{
 		
