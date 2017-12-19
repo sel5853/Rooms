@@ -3,8 +3,8 @@ import java.util.Random;
 
 public class Runner {
 	
-	
-	private static boolean l = false;
+	private static boolean mapOn = false;
+	private static boolean visitedRoom = false;
 	private static boolean gameOn = true;
 	
 	public void printBoard(Room[][] rooms)
@@ -43,7 +43,7 @@ public class Runner {
 		//Create a random puzzle room
 		int a = (int)(Math.random()*building.length);
 		int b = (int)(Math.random()*building.length);
-		building[x][y] = new PuzzleRoom1(a, b);
+		building[x][y] = new PuzzleRoom1(x, y);
 		
 		 //Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
@@ -51,7 +51,7 @@ public class Runner {
 		Scanner in = new Scanner(System.in);
 		while(gameOn)
 		{
-			System.out.println("Where would you like to move? (Choose N, S, E, W, M for map) ");
+			System.out.println("Where would you like to move? (Choose N, S, E, W) ");
 			String move = in.nextLine();
 			if(validMove(move, player1, building))
 			{
@@ -123,11 +123,19 @@ public class Runner {
 		}
 		return true;
 	}
+	
 	public static void gameOff()
 	{
 		gameOn = false;
 	}
 	
+	public static void mapOn()
+	{
+		mapOn = true;
+	}
 
-
+	public static void visitedRoom()
+	{
+		visitedRoom = true;
+	}
 }
