@@ -3,9 +3,11 @@ import java.util.Random;
 
 public class Runner {
 	
-	private static boolean mapOn = false;
+	private static boolean mapOn = true;
 	private static boolean visitedRoom = false;
 	private static boolean gameOn = true;
+	
+	private static Room[][] rooms;
 	
 	public void printBoard(Room[][] rooms)
 	{
@@ -22,6 +24,18 @@ public class Runner {
 	
 	public static void main(String[] args)
 	{
+		
+		if(mapOn = true)
+		{
+			for(Room[] x : rooms)
+			{
+				for(Room y : x)
+				{
+					y.print();
+				}
+				System.out.println();	
+			}
+		}
 		Room[][] building = new Room[10][10];
 		
 		//Fill the building with normal rooms
