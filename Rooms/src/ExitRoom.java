@@ -13,7 +13,7 @@ public class ExitRoom extends Room
 		x.setyLoc(this.yLoc);
 		Runner.mapOn();
 		
-		if( = 1000)
+		if(x.getscore() == 1000)
 		{
 			System.out.println("Congratulations, you have beat the game!");
 		}

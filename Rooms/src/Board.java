@@ -1,3 +1,5 @@
+import java.util.Random;
+import java.util.Scanner;
 
 public class Board {
 	
@@ -8,23 +10,22 @@ public class Board {
 		this.rooms = rooms;
 	}
 	
-	public Board(int area)
-	{
-		int x = 8;
-		int y = 8;
-		this.rooms = new Room[y][x];
+	public Board()
+	{	
+		int x = (int)(Math.random() * 4) + 6;
+		int y = (int)(Math.random() * 4) + 6;
+		this.rooms = new Room[x][y];
 	}
 	
 	public void printBoard()
 	{
-		
 		for(Room[] x : rooms)
 		{
 			for(Room y : x)
 			{
-				y.print();
+				System.out.print("[ ]");
 			}
-			System.out.println();	
+			System.out.println();
 		}
 	}
 	

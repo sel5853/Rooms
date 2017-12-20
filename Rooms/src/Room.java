@@ -3,11 +3,13 @@ public class Room {
 	Person occupant;
 	int xLoc,yLoc;
 	
+	
 	public Room(int x, int y)
 	{
 		xLoc = x;
 		yLoc = y;
 	}
+	
 	public void enterRoom(Person x)
 	{
 		System.out.println("You enter a plain old room");
@@ -23,9 +25,6 @@ public class Room {
 	
 	public void print()
 	{
-		System.out.println("[");
-		System.out.println("x");
-		System.out.println("]");
-
+		System.out.println("[ ]");
 	}
 }

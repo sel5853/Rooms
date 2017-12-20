@@ -9,34 +9,20 @@ public class Runner {
 	
 	private static Room[][] rooms;
 	
-	public void printBoard(Room[][] rooms)
-	{
-		
-		for(Room[] x : rooms)
-		{
-			for(Room y : x)
-			{
-				System.out.println(rooms.toString());	
-			}
-			System.out.println();	
-		}
-	}
 	
 	public static void main(String[] args)
-	{
+	{		
+	
+		Board r1 = new Board();
 		
-		if(mapOn = true)
+		Room[][] building = r1.getMap();
+		
+		if(mapOn == true)
 		{
-			for(Room[] x : rooms)
-			{
-				for(Room y : x)
-				{
-					y.print();
-				}
-				System.out.println();	
-			}
+			r1.printBoard();
 		}
-		Room[][] building = new Room[10][10];
+		
+		
 		
 		//Fill the building with normal rooms
 		for (int x = 0; x<building.length; x++)
@@ -46,18 +32,11 @@ public class Runner {
 				building[x][y] = new Room(x,y);
 			}
 		}
-		 
-		
 		
 		//Create a random winning room.
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
-		building[x][y] = new WinningRoom(x, y);
-		
-		//Create a random puzzle room
-		int a = (int)(Math.random()*building.length);
-		int b = (int)(Math.random()*building.length);
-		building[x][y] = new PuzzleRoom1(x, y);
+		building[x][y] = new ExitRoom(x, y);
 		
 		 //Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
