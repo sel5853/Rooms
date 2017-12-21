@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Board {
 	
 	private Room[][] rooms;
+	Person occupant;
 	
 	public Board(Room[][] rooms)
 	{
@@ -23,7 +24,15 @@ public class Board {
 		{
 			for(Room y : x)
 			{
-				System.out.print("[ ]");
+				if(occupant == null)
+				{
+					System.out.print("[ ]");
+				}
+				else if(occupant !=  null)
+				{
+					System.out.print("[x]");
+				}
+				
 			}
 			System.out.println();
 		}

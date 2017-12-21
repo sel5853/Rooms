@@ -16,7 +16,11 @@ public class ExitRoom extends Room
 		if(x.getscore() == 1000)
 		{
 			System.out.println("Congratulations, you have beat the game!");
+			Runner.gameOff();
 		}
-		System.out.println("You do not meet all the requirements to exit the level!");
+		else if(x.getscore() != 1000) 
+		{
+			System.out.println("You do not meet all the requirements to exit the level!");
+		}
 	}
 }

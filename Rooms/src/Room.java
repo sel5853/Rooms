@@ -25,6 +25,18 @@ public class Room {
 	
 	public void print()
 	{
-		System.out.println("[ ]");
+		if(occupant == null)
+		{
+			System.out.println("[ ]");	
+		}
+		else if(occupant != null)
+		{
+			System.out.println("[x]");
+		}
+	}
+	
+	public void visitRoom()
+	{
+		
 	}
 }

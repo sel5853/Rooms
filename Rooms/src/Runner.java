@@ -33,9 +33,9 @@ public class Runner {
 			}
 		}
 		
-		//Create a random winning room.
-		int x = (int)(Math.random()*building.length);
-		int y = (int)(Math.random()*building.length);
+		//Creates the room in which the player will need to go to win the game.
+		int x = building.length - 1;
+		int y = 3;
 		building[x][y] = new ExitRoom(x, y);
 		
 		 //Setup player 1 and the input scanner
@@ -48,13 +48,20 @@ public class Runner {
 			String move = in.nextLine();
 			if(validMove(move, player1, building))
 			{
-				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
+				if(mapOn == false)
+				{
+					System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
+				}
+				else if(mapOn == true)
+				{
+					System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
+					r1.printBoard();
+				}
 			}
 			
 			else {
 				System.out.println("Please choose a valid move.");
-			}
-			
+			}			
 			
 		}
 		in.close();
