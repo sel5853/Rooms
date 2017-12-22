@@ -35,10 +35,12 @@ public class Runner {
 		
 		//Creates the room in which the player will need to go to win the game.
 		int x = building.length - 1;
-		int y = 3;
+		int y = building[0].length - 1;
 		building[x][y] = new ExitRoom(x, y);
 		
-		 //Setup player 1 and the input scanner
+		
+		
+		//Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
 		building[0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
