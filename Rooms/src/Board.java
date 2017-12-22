@@ -31,8 +31,7 @@ public class Board {
 				else if(occupant !=  null)
 				{
 					System.out.print("[x]");
-				}
-				
+				}				
 			}
 			System.out.println();
 		}
@@ -46,10 +45,5 @@ public class Board {
 	public void setMap(Room[][] rooms)
 	{
 		this.rooms = rooms;
-	}
-	
-	public String toString()
-	{
-		return "[ ]";
 	}
 }

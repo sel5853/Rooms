@@ -22,8 +22,6 @@ public class Runner {
 			r1.printBoard();
 		}
 		
-		
-		
 		//Fill the building with normal rooms
 		for (int x = 0; x<building.length; x++)
 		{
@@ -39,7 +37,7 @@ public class Runner {
 		building[x][y] = new ExitRoom(x, y);
 		
 		
-		
+	
 		//Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
 		building[0][0].enterRoom(player1);
