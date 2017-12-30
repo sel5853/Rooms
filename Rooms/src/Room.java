@@ -2,6 +2,7 @@
 public class Room {
 	Person occupant;
 	int xLoc,yLoc;
+	boolean winningRoom = false;
 	
 	
 	public Room(int x, int y)
@@ -23,20 +24,12 @@ public class Room {
 		occupant = null;
 	}
 	
-	public void print()
-	{
-		if(occupant == null)
-		{
-			System.out.println("[ ]");	
-		}
-		else if(occupant != null)
-		{
-			System.out.println("[x]");
-		}
-	}
-	
 	public void visitRoom()
 	{
 		
+	}
+	
+	public void isWinningRoom() {
+		winningRoom=true;
 	}
 }
