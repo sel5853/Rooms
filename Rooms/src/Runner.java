@@ -31,12 +31,19 @@ public class Runner {
 			}
 		}
 		
-		//Creates the room in which the player will need to go to win the game.
-		int x = building.length - 1;
-		int y = building[0].length - 1;
-		building[x][y] = new ExitRoom(x, y);
-		
-		
+		//Depending on this, the winning room is either on the top/bottom or left/right. Determines location of the room.
+		if((int)Math.random() * 10 <= 2)
+		{
+			int x = building.length - 1;
+			int y = building[0].length - 1;
+			building[x][y] = new ExitRoom(x, y);
+		}
+		else
+		{
+			int x = building[0].length - 1;
+			int y = building.length - 1;
+			building[x][y] = new ExitRoom(x, y);
+		}
 	
 		//Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
@@ -51,11 +58,13 @@ public class Runner {
 				if(mapOn == false)
 				{
 					System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
+					System.out.println("Score: " + player1.getscore());
 				}
 				else if(mapOn == true)
 				{
 					System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
 					r1.printBoard();
+					System.out.println("Score: " + player1.getscore());
 				}
 			}
 			
