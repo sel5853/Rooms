@@ -21,7 +21,7 @@ public class Runner {
 		{
 			r1.printBoard();
 		}
-		
+		s
 		//Fill the building with normal rooms
 		for (int x = 0; x<building.length; x++)
 		{
