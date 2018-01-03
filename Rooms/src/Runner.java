@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class Runner {
 	
-	private static boolean mapOn = true;
+	private static boolean mapOn = false;
 	private static boolean visitedRoom = false;
 	private static boolean gameOn = true;
 	
@@ -31,19 +31,24 @@ public class Runner {
 			}
 		}
 		
-		//Depending on this, the winning room is either on the top/bottom or left/right. Determines location of the room.
-		if((int)Math.random() * 10 <= 2)
+		//Depending on this, the winning room is either on the bottom or right. Determines location of the room.
+		if((int)Math.random() * 2 <= 1)
 		{
-			int x = building.length - 1;
-			int y = building[0].length - 1;
+			int x = building.length * (int)Math.random();		
+			int y = building[0].length - 1;						//Right
 			building[x][y] = new ExitRoom(x, y);
 		}
 		else
 		{
-			int x = building[0].length - 1;
-			int y = building.length - 1;
+			int x = building.length - 1;						//Bottom
+			int y = (int)Math.random();
 			building[x][y] = new ExitRoom(x, y);
 		}
+		
+		//Puts the map room close to the player's starting location
+		int x = 2;
+		int y = 2;
+		building[x][y] = new MapRoom(x, y);
 	
 		//Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
