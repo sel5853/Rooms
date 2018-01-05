@@ -3,6 +3,7 @@ public class Room {
 	Person occupant;
 	int xLoc,yLoc;
 	boolean winningRoom = false;
+	public static boolean visited = false;
 	
 	
 	public Room(int x, int y)
@@ -24,12 +25,12 @@ public class Room {
 		occupant = null;
 	}
 	
-	public void visitRoom()
+	public static void visited()
 	{
-		
+		visited = true;
 	}
 	
 	public void isWinningRoom() {
-		winningRoom=true;
+		winningRoom = true;
 	}
 }

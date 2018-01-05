@@ -13,6 +13,7 @@ public class Board {
 	
 	public Board()
 	{	
+		//At least 6 by 6
 		int x = (int)(Math.random() * 4) + 6;
 		int y = (int)(Math.random() * 4) + 6;
 		this.rooms = new Room[x][y];
@@ -20,20 +21,27 @@ public class Board {
 	
 	public void printBoard()
 	{
-		for(Room[] x : rooms)
+		if(Runner.mapOn = true)
 		{
-			for(Room y : x)
+			for(Room[] x : rooms)
 			{
-				if(occupant == null)
+				for(Room y : x)
 				{
-					System.out.print("[ ]");
+					if(Room.visited == false && occupant == null)
+					{
+						System.out.print("[ ]");
+					}
+					else if(Room.visited == true && occupant ==  null)
+					{
+						System.out.print("[X]");
+					}				
+					else if(occupant != null)
+					{
+						System.out.print("[0]");
+					}
 				}
-				else if(occupant !=  null)
-				{
-					System.out.print("[x]");
-				}				
+				System.out.println();
 			}
-			System.out.println();
 		}
 	}
 	

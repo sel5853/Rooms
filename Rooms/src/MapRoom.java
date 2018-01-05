@@ -1,6 +1,7 @@
 
 public class MapRoom extends Room 
 {
+	private boolean visited = false;
 	
 	public MapRoom(int x, int y)
 	{
@@ -12,6 +13,7 @@ public class MapRoom extends Room
 		System.out.println();
 		System.out.println("The map will now be displayed everytime you move.");
 		occupant = x;
+		visited = true;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
 		Runner.mapOn();

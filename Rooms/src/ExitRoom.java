@@ -9,6 +9,7 @@ public class ExitRoom extends Room
 	public void enterRoom(Person x)
 	{
 		occupant = x;
+		visited = true;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
 		Runner.mapOn();

@@ -3,8 +3,7 @@ import java.util.Random;
 
 public class Runner {
 	
-	private static boolean mapOn = false;
-	private static boolean visitedRoom = false;
+	public static boolean mapOn = true;
 	private static boolean gameOn = true;
 	
 	private static Room[][] rooms;
@@ -12,7 +11,11 @@ public class Runner {
 	
 	public static void main(String[] args)
 	{		
-	
+		
+		System.out.println("You wake up in a building.");
+		System.out.println("A note on wall reads: To escape, you must solve four puzzles located in four different rooms.");
+		System.out.println("Be careful! Some rooms may be empty, others may have traps or warps.");
+		
 		Board r1 = new Board();
 		
 		Room[][] building = r1.getMap();
@@ -21,8 +24,8 @@ public class Runner {
 		{
 			r1.printBoard();
 		}
-		s
-		//Fill the building with normal rooms
+		
+		//Fill the building with normal rooms - Placed before everything else or it will override other rooms
 		for (int x = 0; x<building.length; x++)
 		{
 			for (int y = 0; y < building[x].length; y++)
@@ -31,24 +34,44 @@ public class Runner {
 			}
 		}
 		
+		//Creates a MathRoom
+		int x = (int)(Math.random()*building.length);
+		int y = (int)(Math.random()*building[0].length);
+		building[x][y] = new MathRoom(x, y);
+		
+		//Creates a RiddleRoom
+		int x1 = (int)(Math.random()*building.length);
+		int y1 = (int)(Math.random()*building[0].length);
+		building[x1][y1] = new RiddleRoom(x1, y1);
+		
+		//Creates a GuessingRoom
+		int x2 = (int)(Math.random()*building.length);
+		int y2 = (int)(Math.random()*building[0].length);
+		building[x2][y2] = new GuessingRoom(x2, y2);
+		
+		//Creates random event rooms
+		int x3 = (int)(Math.random()*building.length);
+		int y3 = (int)(Math.random()*building[0].length);
+		building[x3][y3] = new RandomEventRoom(x3, y3);
+		
 		//Depending on this, the winning room is either on the bottom or right. Determines location of the room.
 		if((int)Math.random() * 2 <= 1)
 		{
-			int x = building.length * (int)Math.random();		
-			int y = building[0].length - 1;						//Right
-			building[x][y] = new ExitRoom(x, y);
+			int x4 = building.length * (int)Math.random();		
+			int y4 = building[0].length - 1;						//Right Side
+			building[x4][y4] = new ExitRoom(x4, y4);
 		}
 		else
 		{
-			int x = building.length - 1;						//Bottom
-			int y = (int)Math.random();
-			building[x][y] = new ExitRoom(x, y);
+			int x4 = building.length - 1;						//Bottom
+			int y4 = (int)Math.random();
+			building[x4][y4] = new ExitRoom(x4, y4);
 		}
 		
 		//Puts the map room close to the player's starting location
-		int x = 2;
-		int y = 2;
-		building[x][y] = new MapRoom(x, y);
+		int x5 = 2;
+		int y5 = 2;
+		building[x5][y5] = new MapRoom(x5, y5);
 	
 		//Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
@@ -146,10 +169,5 @@ public class Runner {
 	public static void mapOn()
 	{
 		mapOn = true;
-	}
-
-	public static void visitedRoom()
-	{
-		visitedRoom = true;
 	}
 }
