@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class ExitRoom extends Room 
 {
@@ -12,7 +13,6 @@ public class ExitRoom extends Room
 		visited = true;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
-		Runner.mapOn();
 		
 		if(x.getscore() == 1000)
 		{

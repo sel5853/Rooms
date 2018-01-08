@@ -1,7 +1,7 @@
+import java.util.Scanner;
 
 public class MapRoom extends Room 
 {
-	private boolean visited = false;
 	
 	public MapRoom(int x, int y)
 	{

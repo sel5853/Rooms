@@ -5,6 +5,7 @@ public class Runner {
 	
 	public static boolean mapOn = true;
 	private static boolean gameOn = true;
+	private static boolean math = false;
 	
 	private static Room[][] rooms;
 	
@@ -74,7 +75,7 @@ public class Runner {
 		building[x5][y5] = new MapRoom(x5, y5);
 	
 		//Setup player 1 and the input scanner
-		Person player1 = new Person("FirstName", "FamilyName", 0,0);
+		Person player1 = new Person("FirstName", "FamilyName", 0,0,0);
 		building[0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
 		while(gameOn)
@@ -169,5 +170,10 @@ public class Runner {
 	public static void mapOn()
 	{
 		mapOn = true;
+	}
+	
+	public static void mathOn()
+	{
+		math = true;
 	}
 }
