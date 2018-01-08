@@ -36,7 +36,7 @@ public class MathRoom extends Room
 				{
 					System.out.println("You have solved the problem! +250 Points!");
 					System.out.println("The doors open around you.");
-					x.setScore(250);
+					x.setScore(x.xScore + 250);
 					math = false;
 				}
 				else

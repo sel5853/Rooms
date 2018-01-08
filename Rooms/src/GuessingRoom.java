@@ -36,7 +36,7 @@ public class GuessingRoom extends Room
 				{
 					System.out.println("Nice one! +250 Points!");
 					System.out.println("The doors open around you.");
-					x.setScore(250);
+					x.setScore(x.xScore + 250);
 					guess = false;
 				}
 				else

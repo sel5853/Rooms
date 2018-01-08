@@ -34,7 +34,7 @@ public class RiddleRoom extends Room
 				{
 					System.out.println("I didn't think that you would get that one! +250 Points!");
 					System.out.println("The doors open around you.");
-					x.setScore(250);
+					x.setScore(x.xScore + 250);
 					riddle = false;
 				}
 				else

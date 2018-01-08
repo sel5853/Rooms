@@ -4,7 +4,8 @@
 public class Person {
 	String firstName;
 	String familyName;
-	int xLoc, yLoc, xScore;
+	int xLoc, yLoc;
+	int xScore = 0;
 	
 	public int getScore()
 	{

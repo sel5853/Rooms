@@ -34,7 +34,7 @@ public class FourDoors extends Room
 				{
 					System.out.println("You open the door and find the gem. +250 Points!");
 					System.out.println("The doors open around you.");
-					x.setScore(250);
+					x.setScore(x.xScore + 250);
 					doors = false;
 				}
 				else
