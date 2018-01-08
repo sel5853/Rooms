@@ -6,6 +6,7 @@ public class TrapRoom extends Room
 	
 	//Set up an random integer value so it can be later used to randomly choose an event to fire.
 	private int a = ((int)Math.random() * 9) + 1;
+	private boolean trap = false;
 	
 	public TrapRoom(int x, int y)
 	{
@@ -15,6 +16,7 @@ public class TrapRoom extends Room
 	{
 		occupant = x;
 		visited = true;
+		trap = true;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
 		
@@ -35,6 +37,7 @@ public class TrapRoom extends Room
 			System.out.println("You fell just right past the trap door so that you did not fall through.");
 			System.out.println("Luckily for you, you get back up unscathed.");
 			System.out.println("If it had not be for the rock, you would not have noticed the trap door right besides you.");
+			trap = false;
 		}
 	}
 	

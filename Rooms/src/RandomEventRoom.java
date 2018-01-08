@@ -16,8 +16,6 @@ public class RandomEventRoom extends Room
 		occupant = x;
 		visited = true;
 		warp = true;
-		x.setxLoc(5);
-		x.setyLoc(5);
 		
 		System.out.println("You enter the room.");
 		System.out.println("");
@@ -27,6 +25,9 @@ public class RandomEventRoom extends Room
 		System.out.println("As you peer into the mirror examining yourself, you realize that you surroundings have been changed.");
 		System.out.println("The mirror has warped you to another room!");
 	
+		x.setxLoc(5);
+		x.setyLoc(5);
+		warp = false;
 	}
 	
 	public void print()

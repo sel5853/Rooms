@@ -35,6 +35,7 @@ public class FourDoors extends Room
 					System.out.println("You open the door and find the gem. +250 Points!");
 					System.out.println("The doors open around you.");
 					x.setScore(250);
+					doors = false;
 				}
 				else
 				{
@@ -42,9 +43,10 @@ public class FourDoors extends Room
 					System.out.println("Instead, there was a portal that warped you back to the beginning!");
 					x.setxLoc(0);
 					x.setyLoc(0);
+					doors = false;
 				}
 			} 
-			while(doors == false);
+			while(doors == true);
 		}
 	
 	}
@@ -87,6 +89,7 @@ public class FourDoors extends Room
 		return -1;
 	}
 	
+	//Prints the room with a 4 to represent the 4 doors guessing game in the room.
 	public void print()
 	{
 		if(Runner.mapOn = true)

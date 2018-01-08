@@ -37,15 +37,17 @@ public class MathRoom extends Room
 					System.out.println("You have solved the problem! +250 Points!");
 					System.out.println("The doors open around you.");
 					x.setScore(250);
+					math = false;
 				}
 				else
 				{
 					System.out.println("I'm sorry, that is incorrect. Better luck next time!");
 					x.setxLoc(3);
 					x.setyLoc(3);
+					math = false;
 				}
 			} 
-			while(math == false);
+			while(math == true);
 		}
 	}
 	

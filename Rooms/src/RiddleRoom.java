@@ -35,15 +35,17 @@ public class RiddleRoom extends Room
 					System.out.println("I didn't think that you would get that one! +250 Points!");
 					System.out.println("The doors open around you.");
 					x.setScore(250);
+					riddle = false;
 				}
 				else
 				{
 					System.out.println("I'm sorry, that is incorrect. Try again!");
 					x.setxLoc(3);
 					x.setyLoc(3);
+					riddle = false;
 				}
 			} 
-			while(riddle == false);
+			while(riddle == true);
 		}
 	
 	}

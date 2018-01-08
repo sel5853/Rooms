@@ -16,7 +16,8 @@ public class ExitRoom extends Room
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
 		
-		if(x.getScore() == 1000)
+		//If the player's score is 750 or higher, they will be able to exit the level, otherwise, they are not
+		if(x.getScore() >= 750)
 		{
 			System.out.println("Congratulations, you have aquired 1000 points.");
 			System.out.println("With these points you are now eligible to leave this facility.");
@@ -26,12 +27,13 @@ public class ExitRoom extends Room
 			System.out.println("GAME END");
 			Runner.gameOff();
 		}
-		else if(x.getScore() != 1000) 
+		else if(x.getScore() < 750) 
 		{
 			System.out.println("You do not meet all the requirements to exit the level!");
 		}
 	}
 	
+	//Prints the exit room marked with an E after it has been explored.
 	public void print()
 	{
 		if(Runner.mapOn = true)

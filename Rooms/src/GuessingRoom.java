@@ -37,15 +37,17 @@ public class GuessingRoom extends Room
 					System.out.println("Nice one! +250 Points!");
 					System.out.println("The doors open around you.");
 					x.setScore(250);
+					guess = false;
 				}
 				else
 				{
 					System.out.println("I'm sorry, that is incorrect. Try again!");
 					x.setxLoc(3);
 					x.setyLoc(3);
+					guess = false;
 				}
 			} 
-			while(guess == false);
+			while(guess == true);
 		}
 	
 	}
