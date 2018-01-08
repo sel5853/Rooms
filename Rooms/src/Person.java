@@ -1,15 +1,17 @@
 
+//Stanley Liang TBA Project
+
 public class Person {
 	String firstName;
 	String familyName;
 	int xLoc, yLoc, xScore;
 	
-	public int getscore()
+	public int getScore()
 	{
 		return xScore;
 	}
 	
-	public void setscore(int xScore)
+	public void setScore(int xScore)
 	{
 		this.xScore = xScore;
 	}

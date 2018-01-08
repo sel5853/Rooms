@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+//Stanley Liang TBA Project
+
 public class MapRoom extends Room 
 {
 	
@@ -17,5 +19,25 @@ public class MapRoom extends Room
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
 		Runner.mapOn();
+	}
+	
+	public void print()
+	{
+		if(Runner.mapOn = true)
+		{
+			if(Room.visited == false && occupant == null)
+			{
+				System.out.print("[ ]");
+			}
+			else if(Room.visited == true && occupant ==  null)
+			{
+				System.out.print("[@]");
+			}				
+			else if(occupant != null)
+			{
+				System.out.print("[0]");
+			}
+			System.out.println();
+		}
 	}
 }

@@ -2,13 +2,11 @@ import java.util.Scanner;
 
 //Stanley Liang TBA Project
 
-public class MathRoom extends Room
+public class FourDoors extends Room
 {
-
-	private boolean math = false;
-	Scanner read = new Scanner(System.in);
 	
-	public MathRoom(int x, int y)
+	private boolean doors = false;
+	public FourDoors(int x, int y)
 	{
 		super(x, y);
 	}
@@ -17,36 +15,38 @@ public class MathRoom extends Room
 		System.out.println();
 		occupant = x;
 		visited = true;
-		math = true;
+		doors = true;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
-		
-		System.out.println("The doors close around you as you enter");
-		System.out.println("There are numbers on the wall reading 4, 7, 2, 9.");
-		System.out.println("Under it reads: What is the product of all 4 numbers?");
-		System.out.println("On the other side there are numbers reading 22, 24, 502, 504. (Choose one)");
-		
-		while(math == true)
+
+		System.out.println("The doors close behind you as you enter");
+		System.out.println("A voice reads:");
+		System.out.println("In front of you are four doors. One has a gem and the rest have a surprise.");
+		System.out.println("Your objective is to find the gem. Which door do you choose? (1, 2, 3, 4)");
+	
+		while(doors == true)
 		{
 			Scanner read = new Scanner(System.in);
 			String statement = read.nextLine();
 			do 
 			{
-				if(findKeyWord(statement, "504", 0) >= 0)
+				if(findKeyWord(statement, "2", 0) >= 0)
 				{
-					System.out.println("You have solved the problem! +250 Points!");
+					System.out.println("You open the door and find the gem. +250 Points!");
 					System.out.println("The doors open around you.");
 					x.setScore(250);
 				}
 				else
 				{
-					System.out.println("I'm sorry, that is incorrect. Better luck next time!");
-					x.setxLoc(3);
-					x.setyLoc(3);
+					System.out.println("You open the door and there is no gem.");
+					System.out.println("Instead, there was a portal that warped you back to the beginning!");
+					x.setxLoc(0);
+					x.setyLoc(0);
 				}
 			} 
-			while(math == false);
+			while(doors == false);
 		}
+	
 	}
 	
 	private int findKeyWord(String statement, String goal,
@@ -59,7 +59,6 @@ public class MathRoom extends Room
 
 		while (psn >= 0)
 		{
-
 			String before = " ", after = " ";
 			if (psn > 0)
 			{
@@ -73,7 +72,7 @@ public class MathRoom extends Room
 			}
 
 			if (((before.compareTo("a") < 0) || (before
-					.compareTo("z") > 0)) 
+					.compareTo("z") > 0))
 											
 					&& ((after.compareTo("a") < 0) || (after
 							.compareTo("z") > 0)))
@@ -98,7 +97,7 @@ public class MathRoom extends Room
 			}
 			else if(Room.visited == true && occupant ==  null)
 			{
-				System.out.print("[#]");
+				System.out.print("[4]");
 			}				
 			else if(occupant != null)
 			{
