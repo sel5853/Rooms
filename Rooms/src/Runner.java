@@ -18,7 +18,7 @@ public class Runner {
 		System.out.println("A note on wall reads: To escape, you must solve four puzzles located in four different rooms.");
 		System.out.println("Each puzzle solved will grant 250 points. You need 750 points in order to be able to escape.");
 		System.out.println("There are 1000 available points to be obtained but you only require 750.");
-		System.out.println("Be careful! Some rooms may be empty, others may have traps or warps.");		
+		System.out.println("Be careful! Some rooms may be empty, others may have traps and surprises.");		
 		System.out.println();
 		
 		Board r1 = new Board();

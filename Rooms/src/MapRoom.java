@@ -18,9 +18,11 @@ public class MapRoom extends Room
 		visited = true;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
+		//Will turn the map on after the player enters the room
 		Runner.mapOn();
 	}
 	
+	//Room will be displayed with the @ symbol
 	public void print()
 	{
 		if(Runner.mapOn = true)

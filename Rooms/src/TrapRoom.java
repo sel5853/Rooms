@@ -5,7 +5,7 @@ public class TrapRoom extends Room
 {
 	
 	//Set up an random integer value so it can be later used to randomly choose an event to fire.
-	private int a = ((int)Math.random() * 9) + 1;
+	private int a = ((int)Math.random() * 9) + 1;	//Creates a random int a between 1 and 10
 	private boolean trap = false;
 	
 	public TrapRoom(int x, int y)
@@ -41,7 +41,7 @@ public class TrapRoom extends Room
 		}
 	}
 	
-	//Prints the room labeled with a T if explored.
+	//Prints the room labeled with a T
 	public void print()
 	{
 		if(Runner.mapOn = true)

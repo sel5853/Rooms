@@ -6,6 +6,8 @@ public class RandomEventRoom extends Room
 {
 
 	private boolean warp = false;
+	private int a = ((int)Math.random() * 9) + 1;
+	
 	public RandomEventRoom(int x, int y)
 	{
 		super(x, y);
@@ -24,10 +26,21 @@ public class RandomEventRoom extends Room
 		System.out.println("You expected something more, but only got a mirror.");
 		System.out.println("As you peer into the mirror examining yourself, you realize that you surroundings have been changed.");
 		System.out.println("The mirror has warped you to another room!");
-	
-		x.setxLoc(5);
-		x.setyLoc(5);
-		warp = false;
+		
+		if(a >= 5)
+		{
+			//Takes the player to room 5x5
+			x.setxLoc(5);
+			x.setyLoc(5);
+			warp = false;
+		}
+		else if(a < 5)
+		{
+			//Takes the player to room 3x3
+			x.setxLoc(3);
+			x.setyLoc(3);
+			warp = false;
+		}
 	}
 	
 	public void print()
